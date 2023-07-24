@@ -3,4 +3,27 @@
 *@
 @{
 }
-<h2>Index</h2>
+<html>
+<head>
+    <link href="~/css/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <img class="logo" src="~/images/logo.png" alt="logo" />
+    <img class="dummyPhoto" src="~/StaticFiles/dummy.jpg" alt="dummyPhoto" />
+    <h2>Index</h2>
+
+    @{
+        int a = 0;
+        int b = 3;
+    }
+
+    @if (a == 10)
+    {
+        <p>true if</p>
+    }
+    else
+    {
+        <p>else</p>
+    }
+</body>
+</html>
