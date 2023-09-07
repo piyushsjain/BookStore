@@ -2,7 +2,15 @@
 }
 
 .logo, .dummyPhoto {
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
 }
 
+.jumbotron{
+}
+
+.footer1{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+}

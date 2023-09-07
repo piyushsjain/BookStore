@@ -1,0 +1,56 @@
+﻿@model BookModel
+@{ 
+    ViewData["Title"] = "Add New Book";
+}
+
+<div class="container">
+    <h1 class="display-4">Add new book</h1>
+    @if (ViewBag.IsSuccess == true) 
+    { 
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>New Book Added!</strong> <br />Click <a asp-controller="book" asp-action="getbook" asp-route-id="@ViewBag.BookId">here</a> to view the details.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <form method="post" asp-controller="book" asp-action="AddNewBook" novalidate>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @*<div class="form-group my-2">
+            <label asp-for="MyField"></label>
+            <input asp-for="MyField" class="form-control" />
+            <span asp-validation-for="MyField" class="text-danger"></span>
+        </div>*@
+        <div class="form-group">
+            <label asp-for="LanguageId" class="my-1 mx-1"></label>
+            <select asp-for="LanguageId" class="form-control" asp-items="ViewBag.Language">
+                <option value="">Please choose the language</option>
+                @*<option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+                <option value="Sanskrit">Sanskrit</option>*@
+            </select>
+            <span asp-validation-for="LanguageId" class="text-danger"></span>
+        </div>
+        <div class="form-group my-2">
+            <label asp-for="Title" class="control-label my-1 mx-1"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group my-2">
+            <label asp-for="Author" class="my-1 mx-1"></label>
+            <input asp-for="Author" class="form-control" />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="form-group my-2">
+            <label asp-for="Description" class="my-1 mx-1"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group my-2">
+            <label asp-for="TotalPages" class="my-1 mx-1"></label>
+            <input asp-for="TotalPages" class="form-control" />
+            <span asp-validation-for="TotalPages" class="text-danger"></span>
+        </div>
+        <div class="form-group my-2">
+            <input type="submit" value="Add book" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

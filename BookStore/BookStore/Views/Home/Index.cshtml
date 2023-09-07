@@ -1,29 +1,90 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@*@{ 
+    dynamic data = @ViewBag.data;
+}*@
+@{ 
+    var bookInfo = ViewData["book"] as BookModel;
+    //ViewData["Title"] = "Home";
 }
-<html>
-<head>
-    <link href="~/css/Site.css" rel="stylesheet" />
-</head>
-<body>
-    <img class="logo" src="~/images/logo.png" alt="logo" />
-    <img class="dummyPhoto" src="~/StaticFiles/dummy.jpg" alt="dummyPhoto" />
-    <h2>Index</h2>
+@{ 
+    var book = ViewData["Book"] as BookModel;
+}
+<section class="jumbotron text-center">
+    <div class="container py-5">
+        @*<h1 class="display-4">Welcome to BookStore @ViewBag.Title</h1>*@
+        @*<h1 class="display-4">Welcome to BookStore @ViewData["Property1"]</h1>*@
+        <h1 class="display-4">Welcome to BookStore @ViewData["CustomProperty"]</h1>
 
-    @{
-        int a = 0;
-        int b = 3;
-    }
+        @*<h1>Id = @book.Id</h1>*@
+        @*<h1>Title = @book.Title</h1>*@
 
-    @if (a == 10)
-    {
-        <p>true if</p>
-    }
-    else
-    {
-        <p>else</p>
-    }
-</body>
-</html>
+        <p class="lead text-muted">
+            @*@data.Id @data.Name <br />
+            @ViewBag.Type.Id @ViewBag.Type.Author <br />*@
+            @bookInfo.Id
+            @bookInfo.Author
+            In literary theory, a text is   any object that can be "read", whether this object is a work of literature,
+            a street sign, an arrangement of buildings on a city block, or styles of clothing. It is a coherent set of
+            signs that transmits some kind of informative message.
+        </p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">Search Books</a>
+        </p>
+    </div>
+</section>
+
+<div class="bg-light pt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <svg xmlns="https://placeholder.pics/svg/300"></svg>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Description of book will be here</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            <small class="text-muted">Author Name</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <svg xmlns="https://placeholder.pics/svg/300"></svg>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Description of book will be here</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            <small class="text-muted">Author Name</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <svg xmlns="https://placeholder.pics/svg/300"></svg>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Description of book will be here</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            <small class="text-muted">Author Name</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            //alert("document is ready");
+        });
+    </script>
+}
