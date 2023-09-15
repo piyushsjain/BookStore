@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="StaticFiles\" />
+    <Folder Include="wwwroot\book\cover\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
